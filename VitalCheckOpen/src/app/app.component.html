@@ -1,0 +1,12 @@
+<div class="wrapper">
+  <mat-toolbar color="primary" class="bg-color" style="position: fixed; top: 0; width: 100%; z-index: 3;">
+    <span class="mat-toolbar-row">
+      <img ngSrc="assets/icon.png" alt="Icon" class="toolbar-icon" height="50" width="50" >
+      <img ngSrc="assets/logo.png" alt="Logo" class="toolbar-logo" height="50" width="150">
+    </span>
+    <span class="ml-auto">
+      <a mat-button [routerLink]="'/sign-in'">Sign-In</a>
+    </span>
+  </mat-toolbar>
+  <router-outlet></router-outlet>
+</div>
