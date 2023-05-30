@@ -1,0 +1,27 @@
+<div class="container">
+  <mat-card class="login-card">
+    <mat-card-content>
+      <div class="logo-container">
+        <img src="assets/logo.png" alt="Logo">
+      </div>
+      <h2 class="title">INICIAR SESIÓN</h2>
+      <form>
+        <mat-form-field appearance="outline" class="input-field white-input">
+          <mat-label>Usuario</mat-label>
+          <input matInput [(ngModel)]="loginUsername" name="loginUsername" required>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="input-field white-input">
+          <mat-label>Contraseña</mat-label>
+          <input matInput [(ngModel)]="loginPassword" name="loginPassword" type="password" required>
+        </mat-form-field>
+        <div class="button-container">
+          <button mat-raised-button color="primary" class="login-button" (click)="login()">Iniciar Sesión</button>
+        </div>
+      </form>
+    </mat-card-content>
+    <mat-card-actions class="button-container">
+      <button mat-button color="primary" class="registration-button" (click)="redirectToRegistration('farmacia')">Registrarse como Farmacia</button>
+      <button mat-button color="primary" class="registration-button" (click)="redirectToRegistration('proveedor')">Registrarse como Proveedor</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
