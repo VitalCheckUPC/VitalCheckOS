@@ -8,6 +8,7 @@ import { PagesComponent } from './side-nav/pages/pages.component';
 import { ProductsComponent } from './side-nav/products/products.component';
 import { SettingsComponent } from './side-nav/settings/settings.component';
 import { StatisticsComponent } from './side-nav/statistics/statistics.component';
+import { SidenavComponent } from './side-nav/sidenav/sidenav.component';
 
 import {NgModule} from "@angular/core";
 
@@ -22,7 +23,8 @@ const routes: Routes = [
   {path: 'coupens', component: CoupensComponent},
   {path: 'pages', component: PagesComponent},
   {path: 'media', component: MediaComponent},
-  {path: 'settings', component: SettingsComponent}
+  {path: 'settings', component: SettingsComponent},
+  {path: 'sidenav', component: SidenavComponent}
 ];
 
 @NgModule({
