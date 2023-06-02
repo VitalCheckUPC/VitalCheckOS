@@ -1,5 +1,5 @@
 .sidenav {
-    background: #263238;
+    background: #DADADA;
     transition: all .5s ease;
     position: fixed;
     z-index: 1;
@@ -31,7 +31,7 @@
             margin-left: 1.5rem;
             font-size: 24px;
             font-weight: 700;
-            color: #fff;
+            color: #000000;
         }
 
         .btn-close {
@@ -73,13 +73,13 @@
             display: flex;
             align-items: center;
             height: 3rem;
-            color: #f3f3f3;
+            color: #000000;
             text-decoration: none;
             border-radius: 0.625rem;
             transition: all .3s ease;
 
             .sidenav-link-icon {
-                font-size: 22px;
+                font-size: 30px;
                 width: 2rem;
                 min-width: 2rem;
                 margin: 0 0.5rem;
