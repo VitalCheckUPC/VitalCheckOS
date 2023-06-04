@@ -28,7 +28,8 @@ import { StatisticsComponent } from './side-nav/statistics/statistics.component'
 import { CoupensComponent } from './side-nav/coupens/coupens.component';
 import { PagesComponent } from './side-nav/pages/pages.component';
 import { MediaComponent } from './side-nav/media/media.component';
-import { SettingsComponent } from './side-nav/settings/settings.component'
+import { SettingsComponent } from './side-nav/settings/settings.component';
+import { Body2Component } from './side-nav/body/body2/body2.component'
 @NgModule({
   declarations: [
     SignInComponent,
@@ -42,7 +43,8 @@ import { SettingsComponent } from './side-nav/settings/settings.component'
     StatisticsComponent,
     CoupensComponent,
     MediaComponent,
-    SettingsComponent
+    SettingsComponent,
+    Body2Component
   ],
   imports: [
     BrowserModule,
