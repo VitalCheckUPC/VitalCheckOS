@@ -18,5 +18,6 @@ export class Body2Component {
       styleClass = 'body2-md-screen'
     }
     return styleClass;
+
   }
 }

@@ -9,6 +9,7 @@ import { ProductsComponent } from './side-nav/products/products.component';
 import { SettingsComponent } from './side-nav/settings/settings.component';
 import { StatisticsComponent } from './side-nav/statistics/statistics.component';
 import { SidenavComponent } from './side-nav/sidenav/sidenav.component';
+import {BodyComponent} from "./side-nav/body/body.component";
 
 import {NgModule} from "@angular/core";
 
@@ -16,15 +17,18 @@ const routes: Routes = [
   { path: '', redirectTo: '/sign-in', pathMatch: 'full' },
   { path: 'sign-in', component: SignInComponent },
   { path: 'registration', component: RegistrationComponent },
-  {path: '', redirectTo: 'dashboard', pathMatch: 'full'},
-  {path: 'dashboard', component: DashboardComponent},
-  {path: 'products', component: ProductsComponent},
-  {path: 'statistics', component: StatisticsComponent},
-  {path: 'coupens', component: CoupensComponent},
-  {path: 'pages', component: PagesComponent},
-  {path: 'media', component: MediaComponent},
-  {path: 'settings', component: SettingsComponent},
-  {path: 'sidenav', component: SidenavComponent}
+  { path: 'body',
+    component: BodyComponent,
+  children:[
+    {path: 'dashboard', component: DashboardComponent},
+    {path: 'products', component: ProductsComponent},
+    {path: 'statistics', component: StatisticsComponent},
+    {path: 'coupens', component: CoupensComponent},
+    {path: 'pages', component: PagesComponent},
+    {path: 'media', component: MediaComponent},
+    {path: 'settings', component: SettingsComponent},
+  ]
+  }
 ];
 
 @NgModule({
