@@ -1,0 +1,26 @@
+<<!-- filtrar-producto-modal.component.html -->
+<div class="modal-container">
+  <h2>Filtrar Producto</h2>
+
+  <!-- Campos de entrada para los datos de filtrado -->
+  <div class="input-container">
+    <div class="input-row">
+      <label>Código</label>
+      <input [(ngModel)]="codigo" placeholder="Código" />
+    </div>
+    <div class="input-row">
+      <label>Producto</label>
+      <input [(ngModel)]="producto" placeholder="Producto" />
+    </div>
+    <div class="input-row">
+      <label>Categoría</label>
+      <input [(ngModel)]="categoria" placeholder="Categoría" />
+    </div>
+  </div>
+
+  <!-- Botones -->
+  <div class="button-container">
+    <button mat-raised-button color="warn" (click)="cancelar()">Cancelar</button>
+    <button mat-raised-button color="primary" (click)="filtrar()">Filtrar</button>
+  </div>
+</div>
