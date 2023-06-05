@@ -4,7 +4,7 @@ import { RegistrationComponent } from './security/pages/registration/registratio
 import { CoupensComponent } from './side-nav/coupens/coupens.component';
 import { DashboardComponent } from './side-nav/dashboard/dashboard.component';
 import { MediaComponent } from './side-nav/media/media.component';
-import { PagesComponent } from './side-nav/reportes/reportes.component';
+import { ReportesComponent } from './side-nav/reportes/reportes.component';
 import { ProductsComponent } from './side-nav/products/products.component';
 import { SettingsComponent } from './side-nav/settings/settings.component';
 import { StatisticsComponent } from './side-nav/statistics/statistics.component';
@@ -24,7 +24,7 @@ const routes: Routes = [
     {path: 'products', component: ProductsComponent},
     {path: 'statistics', component: StatisticsComponent},
     {path: 'coupens', component: CoupensComponent},
-    {path: 'reportes', component: PagesComponent},
+    {path: 'reportes', component: ReportesComponent},
     {path: 'media', component: MediaComponent},
     {path: 'settings', component: SettingsComponent},
   ]
