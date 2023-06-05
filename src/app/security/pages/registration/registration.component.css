@@ -19,7 +19,7 @@
 .registration-card {
   max-width: 400px;
   width: 100%;
-  background-color: #c62828; /* Rojo oscuro */
+  background-color: #ee8787; /* Rojo oscuro */
   color: white; /* Texto blanco */
 }
 
@@ -47,6 +47,6 @@
 }
 
 .register-button {
-  background-color: blue;
+  background-color: #4545e3;
   color: white;
 }

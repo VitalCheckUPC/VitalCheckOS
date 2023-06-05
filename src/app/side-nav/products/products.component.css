@@ -43,3 +43,6 @@
 .mat-paginator .mat-paginator-range-label {
   color: #ef8d8d;
 }
+.large-button {
+  font-size: 1.2em;
+}

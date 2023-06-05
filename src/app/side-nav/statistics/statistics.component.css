@@ -47,3 +47,7 @@
   border-left: 2px solid #ea7070;
   border-right: 2px solid #ef7575;
 }
+.red-button {
+  color: white;
+  background-color: #f68989;
+}
