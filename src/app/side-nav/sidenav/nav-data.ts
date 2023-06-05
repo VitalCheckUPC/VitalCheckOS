@@ -20,7 +20,7 @@ export const navbarData = [
         label: 'Reportes'
     },
     {
-        routeLink: '/body/pages',
+        routeLink: '/body/reportes',
         icon: 'https://cdn.discordapp.com/attachments/1087924334779191359/1114244615697076234/Vector_2.png',
         label: 'Ventas'
     },

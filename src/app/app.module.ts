@@ -30,7 +30,7 @@ import { DashboardComponent } from './side-nav/dashboard/dashboard.component';
 import { ProductsComponent } from './side-nav/products/products.component';
 import { StatisticsComponent } from './side-nav/statistics/statistics.component';
 import { CoupensComponent } from './side-nav/coupens/coupens.component';
-import { PagesComponent } from './side-nav/pages/pages.component';
+import {ReportesComponent} from './side-nav/reportes/reportes.component';
 import { MediaComponent } from './side-nav/media/media.component';
 import { FiltrarProductoModalComponent } from './side-nav/dashboard/filtrar-producto-modal/filtrar-producto-modal.component';
 import { FiltrarProveedoresComponent } from './side-nav/products/filtrar-proveedores/filtrar-proveedores.component';
@@ -46,7 +46,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     SidenavComponent,
     BodyComponent,
     DashboardComponent,
-    PagesComponent,
+    ReportesComponent,
     ProductsComponent,
     StatisticsComponent,
     CoupensComponent,
