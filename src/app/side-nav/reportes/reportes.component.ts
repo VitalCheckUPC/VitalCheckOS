@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import { AgregarSolicitudModalComponent } from './agregar-solicitud-modal/agregar-solicitud-modal.component';
 
 interface Solicitud {
   codigo: string;
@@ -35,17 +34,4 @@ export class ReportesComponent implements OnInit {
     });
   }
 
-  agregarSolicitud(): void {
-    const dialogConfig = new MatDialogConfig();
-    dialogConfig.width = '1500px';
-    const dialogRef = this.dialog.open(AgregarSolicitudModalComponent, dialogConfig);
-
-    dialogRef.afterClosed().subscribe(result => {
-      if (result) {
-        // Lógica para agregar una solicitud de abastecimiento
-        console.log('Solicitud agregada:', result);
-        this.fetchData(); // Actualizar la tabla con los nuevos datos
-      }
-    });
-  }
 }
