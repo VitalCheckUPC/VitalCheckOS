@@ -29,9 +29,9 @@ import { SidenavComponent } from './side-nav/sidenav/sidenav.component';
 import { DashboardComponent } from './side-nav/dashboard/dashboard.component';
 import { ProductsComponent } from './side-nav/products/products.component';
 import { StatisticsComponent } from './side-nav/statistics/statistics.component';
-import { CoupensComponent } from './side-nav/coupens/coupens.component';
+import { VentasComponent } from './side-nav/ventas/ventas.component';
 import {ReportesComponent} from './side-nav/reportes/reportes.component';
-import { MediaComponent } from './side-nav/media/media.component';
+import { NotificacionesComponent } from './side-nav/notificaciones/notificaciones.component';
 import { FiltrarProductoModalComponent } from './side-nav/dashboard/filtrar-producto-modal/filtrar-producto-modal.component';
 import { FiltrarProveedoresComponent } from './side-nav/products/filtrar-proveedores/filtrar-proveedores.component';
 import { AgregarSolicitudModalComponent } from './side-nav/statistics/agregar-solicitud-modal/agregar-solicitud-modal.component';
@@ -49,8 +49,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     ReportesComponent,
     ProductsComponent,
     StatisticsComponent,
-    CoupensComponent,
-    MediaComponent,
+    VentasComponent,
+    NotificacionesComponent,
     SettingsComponent,
     Body2Component,
     AgregarProductoModalComponent,

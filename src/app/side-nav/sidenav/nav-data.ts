@@ -15,17 +15,17 @@ export const navbarData = [
         label: 'Abastecimiento'
     },
     {
-        routeLink: '/body/coupens',
+        routeLink: '/body/reportes',
         icon: 'https://cdn.discordapp.com/attachments/1087924334779191359/1114244614833049680/Statistic_Document.png',
         label: 'Reportes'
     },
     {
-        routeLink: '/body/reportes',
+        routeLink: '/body/ventas',
         icon: 'https://cdn.discordapp.com/attachments/1087924334779191359/1114244615697076234/Vector_2.png',
         label: 'Ventas'
     },
     {
-        routeLink: '/body/media',
+        routeLink: '/body/notificaciones',
         icon: 'https://cdn.discordapp.com/attachments/1087924334779191359/1114244615944548475/Vector_3.png',
         label: 'Notificaciones'
     },

@@ -1,9 +1,9 @@
 import {RouterModule, Routes} from "@angular/router";
 import {SignInComponent} from "./security/pages/sign-in/sign-in.component";
 import { RegistrationComponent } from './security/pages/registration/registration.component';
-import { CoupensComponent } from './side-nav/coupens/coupens.component';
+import { VentasComponent } from './side-nav/ventas/ventas.component';
 import { DashboardComponent } from './side-nav/dashboard/dashboard.component';
-import { MediaComponent } from './side-nav/media/media.component';
+import { NotificacionesComponent } from './side-nav/notificaciones/notificaciones.component';
 import { ReportesComponent } from './side-nav/reportes/reportes.component';
 import { ProductsComponent } from './side-nav/products/products.component';
 import { SettingsComponent } from './side-nav/settings/settings.component';
@@ -23,9 +23,9 @@ const routes: Routes = [
     {path: 'dashboard', component: DashboardComponent},
     {path: 'products', component: ProductsComponent},
     {path: 'statistics', component: StatisticsComponent},
-    {path: 'coupens', component: CoupensComponent},
+    {path: 'ventas', component: VentasComponent},
     {path: 'reportes', component: ReportesComponent},
-    {path: 'media', component: MediaComponent},
+    {path: 'notificaciones', component: NotificacionesComponent},
     {path: 'settings', component: SettingsComponent},
   ]
   }
