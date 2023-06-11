@@ -1,27 +1,46 @@
-<div class="container">
-  <mat-card class="login-card">
-    <mat-card-content>
-      <div class="logo-container">
-        <img src="./assets/logo.png" alt="Logo">
+<div class="login-page">
+  <div class="custom-container">
+    <div *ngIf="!registerActive" class="card login" [ngClass]="{ 'error': emptyFields }">
+      <img src="https://media.discordapp.net/attachments/1117212843079651408/1117212979386138674/logo.png" alt="VitalCheck logo" width="200" height="70">
+      <h1>Iniciar sesión</h1>
+      <div class="form-group">
+        <label class="error-message" *ngIf="emptyFields && emailLogin === ''">Por favor ingresa tu correo</label>
+        <input [(ngModel)]="emailLogin" type="text" class="form-control" placeholder="Correo" required>
+        <label class="error-message" *ngIf="emptyFields && passwordLogin === ''">Por favor ingresa tu contraseña</label>
+        <input [(ngModel)]="passwordLogin" type="password" class="form-control" placeholder="Contraseña" required>
+        <button type="submit" class="button-68" (click)="doLogin()">Entrar</button>
+        <p>¿No tienes una cuenta? <a href="javascript:void(0)" (click)="toggleRegister()">Crear cuenta</a></p>
+        <p><a href="javascript:void(0)">¿Olvidaste tu contraseña?</a></p>
       </div>
-      <h2 class="title">INICIAR SESIÓN</h2>
-      <form>
-        <mat-form-field appearance="outline" class="input-field white-input">
-          <mat-label>Usuario</mat-label>
-          <input matInput [(ngModel)]="loginUsername" name="loginUsername" required>
-        </mat-form-field>
-        <mat-form-field appearance="outline" class="input-field white-input">
-          <mat-label>Contraseña</mat-label>
-          <input matInput [(ngModel)]="loginPassword" name="loginPassword" type="password" required>
-        </mat-form-field>
-        <div class="button-container">
-          <button mat-raised-button color="primary" class="login-button" (click)="login()" [routerLink]="'/body'">Iniciar Sesión</button>
-        </div>
-      </form>
-    </mat-card-content>
-    <mat-card-actions class="button-container">
-      <button mat-button color="primary" class="registration-button" (click)="redirectToRegistration('farmacia')">Registrarse como Farmacia</button>
-      <button mat-button color="primary" class="registration-button" (click)="redirectToRegistration('proveedor')">Registrarse como Proveedor</button>
-    </mat-card-actions>
-  </mat-card>
+    </div>
+
+    <div *ngIf="registerActive" class="card register" [ngClass]="{ 'error': emptyFields }">
+      <img src="https://media.discordapp.net/attachments/1117212843079651408/1117212979386138674/logo.png" alt="VitalCheck logo" width="200" height="70">
+      <h1>Registrarse</h1>
+      <div class="form-group">
+        <label class="error-message" *ngIf="emptyFields && nameReg === ''">Por favor ingresa tu nombre</label>
+        <input [(ngModel)]="nameReg" type="text" class="form-control" placeholder="Nombre" required>
+        <label class="error-message" *ngIf="emptyFields && lastnameReg === ''">Por favor ingresa tu apellido</label>
+        <input [(ngModel)]="lastnameReg" type="text" class="form-control" placeholder="Apellido" required>
+        <label class="error-message" *ngIf="emptyFields && emailReg === ''">Por favor ingresa tu correo</label>
+        <input [(ngModel)]="emailReg" type="email" class="form-control" placeholder="Correo" required>
+        <label class="error-message" *ngIf="emptyFields && rucReg === ''">Por favor ingresa tu RUC</label>
+        <label class="error-message" *ngIf="emptyFields && rucReg.length !== 11">El RUC debe tener 11 numeros</label>
+        <input [(ngModel)]="rucReg" type="text" class="form-control" placeholder="RUC" required>
+        <label class="error-message" *ngIf="emptyFields && passwordReg === ''">Por favor ingresa tu contraseña</label>
+        <input [(ngModel)]="passwordReg" type="password" class="form-control" placeholder="Contraseña" required>
+        <label class="error-message" *ngIf="emptyFields && confirmReg === ''">Por favor confirma tu contraseña</label>
+        <input [(ngModel)]="confirmReg" type="password" class="form-control" placeholder="Confirmar Contraseña" required>
+        <label class="error-message" *ngIf="emptyFields && tipoReg === ''">Por favor Seleccione su tipo de cuenta <br></label>
+        <label for="cuenta" class="input-text">Seleccione el tipo de cuenta:</label>
+        <select [(ngModel)]="tipoReg" name="cuenta" id="cuenta" class="input-control">
+          <option value="farmacia">Farmacia</option>
+          <option value="proovedor">Proovedor</option>
+        </select>
+        <br>
+        <button type="submit" class="button-68" (click)="doRegister()">Registrar</button>
+        <p>¿Ya tienes una cuenta? <a href="javascript:void(0)" (click)="toggleRegister()">Iniciar sesión</a></p>
+      </div>
+    </div>
+  </div>
 </div>

@@ -1,28 +1,54 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-sign-in',
   templateUrl: './sign-in.component.html',
   styleUrls: ['./sign-in.component.css']
 })
+
+
 export class SignInComponent {
-  loginUsername: string = '';
-  loginPassword: string = '';
+  registerActive = false;
+  emailLogin = '';
+  passwordLogin = '';
+  nameReg = '';
+  lastnameReg = '';
+  emailReg = '';
+  rucReg = '';
+  passwordReg = '';
+  confirmReg = '';
+  tipoReg='';
+  emptyFields = false;
 
-  constructor(private router: Router) {}
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router  ) {}
 
-  login() {
-    // Simulación de lógica de autenticación
-    if (this.loginUsername === 'usuario' && this.loginPassword === '123456') {
-      console.log('Inicio de sesión exitoso');
-      this.router.navigate(['/sidenav']); // Redirige al menú principal en caso de inicio de sesión exitoso
+  doLogin(): void {
+    if (this.emailLogin === '' || this.passwordLogin === '') {
+      this.emptyFields = true;
     } else {
-      console.log('Credenciales inválidas');
+      alert('You are now logged in');
+      this.router.navigate(['/body/dashboard']);
     }
   }
 
-  redirectToRegistration(type: string) {
-    this.router.navigate(['/registration']);
+  doRegister(): void {
+    if (this.emailReg === '' || this.nameReg === '' || this.lastnameReg === '' || this.rucReg === '' || this.passwordReg === '' || this.confirmReg === '' || this.rucReg.length !== 11 || this.tipoReg === '') {
+      this.emptyFields = true;
+    } else {
+      alert('You are now registered');
+      this.router.navigate(['/body/dashboard']);
+    }
   }
+
+  toggleRegister(): void {
+    this.registerActive = !this.registerActive;
+    this.emptyFields = false;
+  }
+
+  
+  
 }
