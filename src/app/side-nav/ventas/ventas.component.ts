@@ -1,15 +1,34 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, ElementRef } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
+import { HttpClient } from '@angular/common/http';
+import { MatDialog } from '@angular/material/dialog';
+interface Supplier {
+  codigo: string;
+  proveedor: string;
+  departamento: string;
+  ruc: string;
+  telefono: string;
+}
 @Component({
   selector: 'app-ventas',
   templateUrl: './ventas.component.html',
-  styleUrls: ['./ventas.component.scss']
+  styleUrls: ['./ventas.component.css']
 })
 export class VentasComponent implements OnInit {
+  displayedColumns: string[] = ['codigo', 'proveedor', 'departamento', 'ruc', 'telefono'];
+  dataSource: MatTableDataSource<Supplier> = new MatTableDataSource<Supplier>([]);
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private http: HttpClient, private dialog: MatDialog, private elementRef: ElementRef) {
   }
 
+  ngOnInit() {
+    this.getSuppliers().subscribe((suppliers: Supplier[]) => {
+      this.dataSource.data = suppliers;
+    });
+  }
+
+  getSuppliers() {
+    // Realiza la solicitud HTTP para obtener los datos de los proveedores desde la API
+    return this.http.get<Supplier[]>('URL_DE_TU_API');
+  }
 }

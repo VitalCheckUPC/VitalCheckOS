@@ -21,7 +21,6 @@ import {MatListModule} from "@angular/material/list";
 import { MatPaginatorModule } from "@angular/material/paginator";
 import {AgregarProductoModalComponent } from './side-nav/dashboard/agregar-producto-modal/agregar-producto-modal.component';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { RegistrationComponent } from './security/pages/registration/registration.component';
 import {MatSidenavModule} from "@angular/material/sidenav";
 import { MatTableModule } from '@angular/material/table';
 import { BodyComponent } from './side-nav/body/body.component';
@@ -29,9 +28,9 @@ import { SidenavComponent } from './side-nav/sidenav/sidenav.component';
 import { DashboardComponent } from './side-nav/dashboard/dashboard.component';
 import { ProductsComponent } from './side-nav/products/products.component';
 import { StatisticsComponent } from './side-nav/statistics/statistics.component';
-import { CoupensComponent } from './side-nav/coupens/coupens.component';
-import { PagesComponent } from './side-nav/pages/pages.component';
-import { MediaComponent } from './side-nav/media/media.component';
+import { VentasComponent } from './side-nav/ventas/ventas.component';
+import {ReportesComponent} from './side-nav/reportes/reportes.component';
+import { NotificacionesComponent } from './side-nav/notificaciones/notificaciones.component';
 import { FiltrarProductoModalComponent } from './side-nav/dashboard/filtrar-producto-modal/filtrar-producto-modal.component';
 import { FiltrarProveedoresComponent } from './side-nav/products/filtrar-proveedores/filtrar-proveedores.component';
 import { AgregarSolicitudModalComponent } from './side-nav/statistics/agregar-solicitud-modal/agregar-solicitud-modal.component';
@@ -44,15 +43,14 @@ import {MatCheckboxModule} from "@angular/material/checkbox";
   declarations: [
     SignInComponent,
     AppComponent,
-    RegistrationComponent,
     SidenavComponent,
     BodyComponent,
     DashboardComponent,
-    PagesComponent,
+VentasComponent,
     ProductsComponent,
     StatisticsComponent,
-    CoupensComponent,
-    MediaComponent,
+    ReportesComponent,
+    NotificacionesComponent,
     SettingsComponent,
     Body2Component,
     AgregarProductoModalComponent,
