@@ -1,0 +1,49 @@
+<div class="modal-container">
+  <h2>Agregar Producto</h2>
+
+  <!-- Campos de entrada para los datos del producto -->
+  <div class="input-container">
+    <div class="input-row">
+      <label>Código</label>
+      <input [(ngModel)]="codigo" placeholder="Código" />
+    </div>
+    <div class="input-row">
+      <label>Producto</label>
+      <input [(ngModel)]="producto" placeholder="Producto" />
+    </div>
+    <div class="input-row">
+      <label>Cantidad</label>
+      <input [(ngModel)]="cantidad" placeholder="Cantidad" />
+    </div>
+    <div class="input-row">
+      <label>Categoría</label>
+      <input [(ngModel)]="categoria" placeholder="Categoría" />
+    </div>
+    <div class="input-row">
+      <label>Fecha de Ingreso</label>
+      <input [(ngModel)]="fechaIngreso" placeholder="Fecha de Ingreso" />
+    </div>
+    <div class="input-row">
+      <label>Fecha de Caducidad</label>
+      <input [(ngModel)]="fechaCaducidad" placeholder="Fecha de Caducidad" />
+    </div>
+    <div class="input-row">
+      <label>Proveedor</label>
+      <input [(ngModel)]="proveedor" placeholder="Proveedor" />
+    </div>
+    <div class="input-row">
+      <label>Precio de Costo</label>
+      <input [(ngModel)]="precioCosto" placeholder="Precio de Costo" />
+    </div>
+    <div class="input-row">
+      <label>Precio de Venta</label>
+      <input [(ngModel)]="precioVenta" placeholder="Precio de Venta" />
+    </div>
+  </div>
+
+  <!-- Botones -->
+  <div class="button-container">
+    <button mat-raised-button color="warn" (click)="cancelar()">Cancelar</button>
+    <button mat-raised-button color="primary" (click)="confirmar()">Confirmar</button>
+  </div>
+</div>
