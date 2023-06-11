@@ -8,7 +8,8 @@ import { AppComponent } from './app.component';
 import { RouterTestingModule } from "@angular/router/testing";
 import { SignInComponent } from './security/pages/sign-in/sign-in.component';
 import {MatCardModule} from "@angular/material/card";
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { FormsModule } from "@angular/forms";
+import {ReactiveFormsModule} from "@angular/forms";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
@@ -21,7 +22,6 @@ import {MatListModule} from "@angular/material/list";
 import { MatPaginatorModule } from "@angular/material/paginator";
 import {AgregarProductoModalComponent } from './side-nav/dashboard/agregar-producto-modal/agregar-producto-modal.component';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { RegistrationComponent } from './security/pages/registration/registration.component';
 import {MatSidenavModule} from "@angular/material/sidenav";
 import { MatTableModule } from '@angular/material/table';
 import { BodyComponent } from './side-nav/body/body.component';
@@ -42,7 +42,6 @@ import { MatDialogModule } from '@angular/material/dialog';
   declarations: [
     SignInComponent,
     AppComponent,
-    RegistrationComponent,
     SidenavComponent,
     BodyComponent,
     DashboardComponent,
@@ -82,8 +81,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     HttpClientModule,
     MatTableModule,
     MatPaginatorModule,
-    MatDialogModule,
-
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

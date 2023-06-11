@@ -1,6 +1,5 @@
 import {RouterModule, Routes} from "@angular/router";
 import {SignInComponent} from "./security/pages/sign-in/sign-in.component";
-import { RegistrationComponent } from './security/pages/registration/registration.component';
 import { VentasComponent } from './side-nav/ventas/ventas.component';
 import { DashboardComponent } from './side-nav/dashboard/dashboard.component';
 import { NotificacionesComponent } from './side-nav/notificaciones/notificaciones.component';
@@ -16,7 +15,6 @@ import {NgModule} from "@angular/core";
 const routes: Routes = [
   { path: '', redirectTo: '/sign-in', pathMatch: 'full' },
   { path: 'sign-in', component: SignInComponent },
-  { path: 'registration', component: RegistrationComponent },
   { path: 'body',
     component: BodyComponent,
   children:[
