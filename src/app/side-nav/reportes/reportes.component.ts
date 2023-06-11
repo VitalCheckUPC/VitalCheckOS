@@ -4,11 +4,10 @@ import { HttpClient } from '@angular/common/http';
 import { MatDialog } from '@angular/material/dialog';
 
 interface Supplier {
-  codigo: string;
-  proveedor: string;
-  departamento: string;
-  ruc: string;
-  telefono: string;
+  producto: string;
+  cantidad: string;
+  mensual: string;
+  diaria: string;
 }
 
 @Component({
@@ -17,7 +16,7 @@ interface Supplier {
   styleUrls: ['./reportes.component.css']
 })
 export class ReportesComponent implements OnInit {
-  displayedColumns: string[] = ['codigo', 'proveedor', 'departamento', 'ruc', 'telefono'];
+  displayedColumns: string[] = ['producto', 'cantidad', 'mensual', 'diaria',];
   dataSource: MatTableDataSource<Supplier> = new MatTableDataSource<Supplier>([]);
 
   constructor(private http: HttpClient, private dialog: MatDialog, private elementRef: ElementRef) {
