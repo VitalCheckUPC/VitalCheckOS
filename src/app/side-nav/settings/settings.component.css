@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.title {
+  color: white;
+  margin-top: 150px;
+  text-align: center;
+  font-size: 50px;
+}
+
+.container2{
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-left: 50px;
+}
+
+.square {
+  width: 400px;
+  height: 400px;
+  background-color: #B7334D;
+  margin: 40px;
+  border-radius: 50px;
+  
+}
+
+@media (max-width: 600px) {
+  .square {
+      width: 350px;
+  }
+}

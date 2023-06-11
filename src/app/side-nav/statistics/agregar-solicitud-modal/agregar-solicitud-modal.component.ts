@@ -6,6 +6,7 @@ interface Producto {
   cantidad: number;
 }
 
+
 @Component({
   selector: 'app-agregar-solicitud-modal',
   templateUrl: './agregar-solicitud-modal.component.html',
@@ -37,7 +38,6 @@ export class AgregarSolicitudModalComponent {
 
   cancelar(): void {
     // Restablecer los valores
-    this.descripcion = '';
     this.producto = '';
     this.cantidad = 0;
     this.productos = []; // Limpiar la lista de productos agregados
