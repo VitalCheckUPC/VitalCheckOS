@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -19,25 +19,28 @@ export class SignInComponent {
   rucReg = '';
   passwordReg = '';
   confirmReg = '';
-  title ="";
+  tipoReg='';
   emptyFields = false;
+
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router  ) {}
 
   doLogin(): void {
     if (this.emailLogin === '' || this.passwordLogin === '') {
       this.emptyFields = true;
     } else {
       alert('You are now logged in');
-      //this.router.navigate(['/home/levels']);
+      this.router.navigate(['/body/dashboard']);
     }
   }
 
   doRegister(): void {
-    if (this.emailReg === '' || this.nameReg === '' || this.lastnameReg === '' || this.rucReg === '' || this.passwordReg === '' || this.confirmReg === '') {
+    if (this.emailReg === '' || this.nameReg === '' || this.lastnameReg === '' || this.rucReg === '' || this.passwordReg === '' || this.confirmReg === '' || this.rucReg.length !== 11 || this.tipoReg === '') {
       this.emptyFields = true;
     } else {
       alert('You are now registered');
-      // Replace the following line with your routing logic
-      // this.router.navigate(['/home/levels']);
+      this.router.navigate(['/body/dashboard']);
     }
   }
 
