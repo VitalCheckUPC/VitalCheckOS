@@ -7,9 +7,9 @@ import { AgregarProductoModalComponent } from './agregar-producto-modal/agregar-
 import {FiltrarProductoModalComponent} from "./filtrar-producto-modal/filtrar-producto-modal.component";
 
 interface Product {
-  codigo: string;
+  inventoryId: string;
   producto: string;
-  cantidad: number;
+  quantity: number;
   categoria: string;
   fechaIngreso: Date;
   fechaCaducidad: Date;
@@ -25,9 +25,9 @@ interface Product {
 })
 export class DashboardComponent implements OnInit {
   displayedColumns: string[] = [
-    'codigo',
+    'inventoryId',
     'producto',
-    'cantidad',
+    'quantity',
     'categoria',
     'fechaIngreso',
     'fechaCaducidad',
@@ -46,7 +46,7 @@ export class DashboardComponent implements OnInit {
 
   fetchData(): void {
     this.http
-      .get<Product[]>('URL_DE_TU_API')
+      .get<Product[]>('http://localhost:8080/api/v1/inventory')
       .subscribe((data) => {
         this.dataSource.data = data;
         this.dataSource.paginator = this.paginator;

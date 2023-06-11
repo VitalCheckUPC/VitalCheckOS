@@ -38,6 +38,8 @@ import { AgregarSolicitudModalComponent } from './side-nav/statistics/agregar-so
 import { Body2Component } from './side-nav/body/body2/body2.component'
 
 import { MatDialogModule } from '@angular/material/dialog';
+import {MatSortModule} from "@angular/material/sort";
+import {MatCheckboxModule} from "@angular/material/checkbox";
 @NgModule({
   declarations: [
     SignInComponent,
@@ -83,6 +85,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatTableModule,
     MatPaginatorModule,
     MatDialogModule,
+    MatSortModule,
+    MatCheckboxModule,
 
   ],
   providers: [],

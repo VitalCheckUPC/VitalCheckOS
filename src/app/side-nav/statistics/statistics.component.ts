@@ -4,11 +4,11 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { AgregarSolicitudModalComponent } from './agregar-solicitud-modal/agregar-solicitud-modal.component';
+import { map } from 'rxjs/operators';
 
 interface Solicitud {
-  codigo: string;
-  fechaSolicitud: string;
-  numRespuestas: number;
+  medicineId: number;
+  entryDate: string;
   descripcion: string;
 }
 
@@ -18,7 +18,7 @@ interface Solicitud {
   styleUrls: ['./statistics.component.css']
 })
 export class StatisticsComponent implements OnInit {
-  displayedColumns: string[] = ['codigo', 'fechaSolicitud', 'numRespuestas', 'descripcion'];
+  displayedColumns: string[] = ['medicineId', 'entryDate', 'descripcion'];
   dataSource = new MatTableDataSource<Solicitud>();
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
@@ -29,7 +29,13 @@ export class StatisticsComponent implements OnInit {
   }
 
   fetchData(): void {
-    this.http.get<Solicitud[]>('URL_DE_TU_API').subscribe(data => {
+    this.http.get<any[]>('http://localhost:8080/api/v1/dispatch').pipe(
+      map(data => data.map(item => ({
+        medicineId: item.medicine.medicineId,
+        entryDate: item.entryDate,
+        descripcion: item.description
+      })))
+    ).subscribe(data => {
       this.dataSource.data = data;
       this.dataSource.paginator = this.paginator;
     });
@@ -40,8 +46,15 @@ export class StatisticsComponent implements OnInit {
     dialogConfig.width = '1500px';
     const dialogRef = this.dialog.open(AgregarSolicitudModalComponent, dialogConfig);
 
+
+
+
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
+
+
+
+
         // Lógica para agregar una solicitud de abastecimiento
         console.log('Solicitud agregada:', result);
         this.fetchData(); // Actualizar la tabla con los nuevos datos

@@ -7,9 +7,7 @@ import { MatDialogRef } from '@angular/material/dialog';
   styleUrls: ['./filtrar-proveedores.component.css']
 })
 export class FiltrarProveedoresComponent {
-  codigo: string = '';
   proveedor: string = '';
-  departamento: string = '';
 
   @Output() filtrar: EventEmitter<any> = new EventEmitter<any>();
 
@@ -17,9 +15,7 @@ export class FiltrarProveedoresComponent {
 
   confirmar(): void {
     const filtro = {
-      codigo: this.codigo,
-      proveedor: this.proveedor,
-      departamento: this.departamento
+      proveedor: this.proveedor.trim()
     };
 
     this.filtrar.emit(filtro);
