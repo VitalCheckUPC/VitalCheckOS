@@ -7,17 +7,16 @@ import { MatDialogRef } from '@angular/material/dialog';
   styleUrls: ['./filtrar-producto-modal.component.css']
 })
 export class FiltrarProductoModalComponent {
-  codigo: string = '';
-  producto: string = '';
-  categoria: string = '';
+
+  quantity: number = 0;
+  genericName: string = '';
 
   constructor(public dialogRef: MatDialogRef<FiltrarProductoModalComponent>) {}
 
   filtrar(): void {
     const filtro = {
-      codigo: this.codigo,
-      producto: this.producto,
-      categoria: this.categoria
+      quantity: this.quantity,
+      genericName: this.genericName
     };
 
     this.dialogRef.close(filtro);

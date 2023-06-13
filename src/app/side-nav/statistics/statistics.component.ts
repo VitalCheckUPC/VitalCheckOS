@@ -5,7 +5,8 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { AgregarSolicitudModalComponent } from './agregar-solicitud-modal/agregar-solicitud-modal.component';
 import { map } from 'rxjs/operators';
-
+import { tap, catchError } from 'rxjs/operators';
+import { of } from 'rxjs';
 interface Solicitud {
   medicineId: number;
   entryDate: string;
@@ -46,19 +47,22 @@ export class StatisticsComponent implements OnInit {
     dialogConfig.width = '1500px';
     const dialogRef = this.dialog.open(AgregarSolicitudModalComponent, dialogConfig);
 
-
-
-
-    dialogRef.afterClosed().subscribe(result => {
-      if (result) {
-
-
-
-
-        // Lógica para agregar una solicitud de abastecimiento
-        console.log('Solicitud agregada:', result);
-        this.fetchData(); // Actualizar la tabla con los nuevos datos
-      }
-    });
+    dialogRef.afterClosed().pipe(
+      tap((result) => {
+        if (result) {
+          this.http.post('http://localhost:8080/api/v1/dispatch', result).pipe(
+            tap((response) => {
+              console.log('Solicitud agregada:', response);
+              this.fetchData(); // Actualizar la tabla con los nuevos datos
+            }),
+            catchError((error) => {
+              console.error('Error al agregar solicitud:', error);
+              return of(null); // O cualquier otro valor predeterminado
+            })
+          ).subscribe();
+        }
+      })
+    ).subscribe();
   }
+
 }
