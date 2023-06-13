@@ -63,7 +63,7 @@ export class DashboardComponent implements OnInit {
         this.fetchData();
       }
     });
-  } 
+  }
 
   openFiltrarProductoModal(): void {
     const dialogRef = this.dialog.open(FiltrarProductoModalComponent, {

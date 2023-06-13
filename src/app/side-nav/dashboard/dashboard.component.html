@@ -24,11 +24,11 @@
 
   <ng-container matColumnDef="salePrice">
     <th mat-header-cell *matHeaderCellDef>Precio de Costo</th>
-    <td mat-cell *matCellDef="let item">{{ item.salePrice }}</td>
+    <td mat-cell *matCellDef="let item">S/ {{ item.salePrice }}</td>
   </ng-container>
   <ng-container matColumnDef="costPrice">
     <th mat-header-cell *matHeaderCellDef>Precio de Venta</th>
-    <td mat-cell *matCellDef="let item">{{ item.medicine.costPrice }}</td>
+    <td mat-cell *matCellDef="let item">S/ {{ item.medicine.costPrice }}</td>
   </ng-container>
 
   <!-- Cabeceras de la tabla -->
