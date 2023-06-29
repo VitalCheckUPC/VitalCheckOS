@@ -1,5 +1,7 @@
 import {RouterModule, Routes} from "@angular/router";
 import {SignInComponent} from "./security/pages/sign-in/sign-in.component";
+
+//sidenav1
 import { VentasComponent } from './side-nav/ventas/ventas.component';
 import { DashboardComponent } from './side-nav/dashboard/dashboard.component';
 import { NotificacionesComponent } from './side-nav/notificaciones/notificaciones.component';
@@ -9,6 +11,10 @@ import { SettingsComponent } from './side-nav/settings/settings.component';
 import { StatisticsComponent } from './side-nav/statistics/statistics.component';
 import { SidenavComponent } from './side-nav/sidenav/sidenav.component';
 import {BodyComponent} from "./side-nav/body/body.component";
+
+//sidenav2
+
+
 
 import {NgModule} from "@angular/core";
 
