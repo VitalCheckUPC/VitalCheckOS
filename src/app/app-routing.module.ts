@@ -21,12 +21,12 @@ import {NgModule} from "@angular/core";
 const routes: Routes = [
   { path: '', redirectTo: '/sign-in', pathMatch: 'full' },
   { path: 'sign-in', component: SignInComponent },
-  { path: 'body',
+  { path: 'farmacia',
     component: BodyComponent,
   children:[
-    {path: 'dashboard', component: DashboardComponent},
-    {path: 'products', component: ProductsComponent},
-    {path: 'statistics', component: StatisticsComponent},
+    {path: 'inventario', component: DashboardComponent},
+    {path: 'proovedores', component: ProductsComponent},
+    {path: 'abastecimiento', component: StatisticsComponent},
     {path: 'ventas', component: VentasComponent},
     {path: 'reportes', component: ReportesComponent},
     {path: 'notificaciones', component: NotificacionesComponent},
