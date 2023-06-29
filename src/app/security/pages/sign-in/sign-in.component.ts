@@ -31,7 +31,7 @@ export class SignInComponent {
       this.emptyFields = true;
     } else {
       alert('You are now logged in');
-      this.router.navigate(['/farmacia/inventario']);
+      this.router.navigate(['/home/inventario']);
     }
   }
 

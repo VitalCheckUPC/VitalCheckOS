@@ -1,6 +1,7 @@
 import { animate, keyframes, style, transition, trigger } from '@angular/animations';
 import { Component, Output, EventEmitter, OnInit, HostListener } from '@angular/core';
 import { navbarData } from './nav-data';
+import { navbarData2 } from './nav-data2';
 
 interface SideNavToggle {
   screenWidth: number;
@@ -44,6 +45,7 @@ export class SidenavComponent implements OnInit {
   collapsed = false;
   screenWidth = 0;
   navData = navbarData;
+  navData2 = navbarData2;
 
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {

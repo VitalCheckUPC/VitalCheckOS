@@ -15,13 +15,23 @@ import {BodyComponent} from "./side-nav/body/body.component";
 //sidenav2
 
 
+import { inventarioComponentProovedor } from './side-nav/prov-inventario/inventario.component';
+import { NotificacionesComponentProovedor } from './side-nav/prov-notificaciones/notificacionesprov.component';
+
+import { FarmaciasComponent } from './side-nav/prov-farmacias/farmacias.component';
+import { SettingsComponentProovedor } from './side-nav/prov-settings/settings.component';
+import { SolicitudesComponent } from './side-nav/prov-solicitudes/solicitudes.component';
+
+
+
+
 
 import {NgModule} from "@angular/core";
 
 const routes: Routes = [
   { path: '', redirectTo: '/sign-in', pathMatch: 'full' },
   { path: 'sign-in', component: SignInComponent },
-  { path: 'farmacia',
+  { path: 'home',
     component: BodyComponent,
   children:[
     {path: 'inventario', component: DashboardComponent},
@@ -31,18 +41,14 @@ const routes: Routes = [
     {path: 'reportes', component: ReportesComponent},
     {path: 'notificaciones', component: NotificacionesComponent},
     {path: 'settings', component: SettingsComponent},
+    //povedoores
+    {path: 'inventario-prov', component: inventarioComponentProovedor},
+    {path: 'farmacias-prov', component: FarmaciasComponent},
+    {path: 'solicitudes-prov', component: SolicitudesComponent},
+    {path: 'notificaciones-prov', component: NotificacionesComponentProovedor},
+    {path: 'settings-prov', component: SettingsComponentProovedor},
   ]
   },
-  { path: 'proovedor',
-  component: BodyComponent,
-children:[
-  {path: 'inventario', component: DashboardComponent},
-  {path: 'farmacias', component: ProductsComponent},
-  {path: 'abastecimiento', component: StatisticsComponent},
-  {path: 'notificaciones', component: NotificacionesComponent},
-  {path: 'settings', component: SettingsComponent},
-]
-}
 ];
 
 @NgModule({

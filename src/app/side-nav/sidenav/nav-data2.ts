@@ -1,26 +1,26 @@
-export const navbarData = [
+export const navbarData2 = [
     {
-        routeLink: '/proovedor/inventario',
+        routeLink: '/home/inventario-prov',
         icon: 'https://cdn.discordapp.com/attachments/1087924334779191359/1114244616456245368/Vector.png',
         label: 'Inventario'
     },
     {
-        routeLink: '/proovedor/farmacias',
+        routeLink: '/home/farmacias-prov',
         icon: 'https://cdn.discordapp.com/attachments/1087924334779191359/1114244615105687623/Supplier.png',
         label: 'Farmacias'
     },
     {
-        routeLink: '/proovedor/abastecimiento',
+        routeLink: '/home/solicitudes-prov',
         icon: 'https://cdn.discordapp.com/attachments/1087924334779191359/1114244615399276574/Vector_1.png',
-        label: 'Abastecimiento'
+        label: 'Solicitudes'
     },
     {
-        routeLink: '/proovedor/notificaciones',
+        routeLink: '/home/notificaciones-prov',
         icon: 'https://cdn.discordapp.com/attachments/1087924334779191359/1114244615944548475/Vector_3.png',
         label: 'Notificaciones'
     },
     {
-        routeLink: '/proovedor/settings',
+        routeLink: '/home/settings-prov',
         icon: 'https://cdn.discordapp.com/attachments/1087924334779191359/1114244616179417238/Vector_4.png',
         label: 'Configuraciones'
     },
