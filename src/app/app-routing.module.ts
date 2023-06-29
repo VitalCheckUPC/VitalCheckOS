@@ -32,7 +32,17 @@ const routes: Routes = [
     {path: 'notificaciones', component: NotificacionesComponent},
     {path: 'settings', component: SettingsComponent},
   ]
-  }
+  },
+  { path: 'proovedor',
+  component: BodyComponent,
+children:[
+  {path: 'inventario', component: DashboardComponent},
+  {path: 'farmacias', component: ProductsComponent},
+  {path: 'abastecimiento', component: StatisticsComponent},
+  {path: 'notificaciones', component: NotificacionesComponent},
+  {path: 'settings', component: SettingsComponent},
+]
+}
 ];
 
 @NgModule({
