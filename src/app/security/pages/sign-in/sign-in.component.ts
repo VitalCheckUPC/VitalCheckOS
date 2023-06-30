@@ -19,15 +19,6 @@ interface User {
   };
 }
 
-interface UserRegistro {
-  userName: string;
-  email: string;
-  password: string;
-  ruc: number;
-  registrationDate: string;
-  userPlanId: number;
-  userTypeId: number;
-}
 
 @Component({
   selector: 'app-sign-in',
@@ -76,10 +67,12 @@ export class SignInComponent {
         alert('Logeo exitoso');
         if(UserBotica){
           this.router.navigate(['/home/inventario']);
+          localStorage.setItem("usuario", this.emailLogin);
           localStorage.setItem("tipo", tipo1);
         }
         else{
           this.router.navigate(['/home/inventario-prov']);
+          localStorage.setItem("usuario", this.emailLogin);
           localStorage.setItem("tipo", tipo2);
         }
       } else {
@@ -101,50 +94,54 @@ export class SignInComponent {
     ) {
       this.emptyFields = true;
     } else {
-      this.toggleRegister();
+      this.postUsers();
       alert('Registro exitoso');
       if(this.tipoReg === '1'){
-        this.router.navigate(['/home/inventario']);
+        this.router.navigate(['/home/inventario-prov']);
       }
       else{
-        this.router.navigate(['/home/inventario-prov']);
+        this.router.navigate(['/home/inventario']);
       }
     }
   }
 
+
+
   toggleRegister(): void {
-      const currentDate = new Date();
-      const year = currentDate.getFullYear();
-      const month = currentDate.getMonth() + 1;
-      const day = currentDate.getDate();
-      const formattedDate = `${year}-${month < 10 ? '0' + month : month}-${day < 10 ? '0' + day : day}`;
+    this.registerActive = !this.registerActive;
+    this.emptyFields = false;
+  }
 
-      const newUser: UserRegistro = {
-        userName: this.nameReg,
-        email: this.emailReg,
-        password: this.passwordReg,
-        ruc: parseInt(this.rucReg),
-        registrationDate: formattedDate,
-        userPlanId: 0,
-        userTypeId: parseInt(this.tipoReg)
-      };
+  postUsers():void{
+    const currentDate = new Date();
+    const year = currentDate.getFullYear();
+    const month = currentDate.getMonth() + 1;
+    const day = currentDate.getDate();
+    const formattedDate = `${year}-${month < 10 ? '0' + month : month}-${day < 10 ? '0' + day : day}`;
 
-      this.http
-        .post<UserRegistro>('https://api-open-tf-production.up.railway.app/api/v1/user', newUser)
-        .subscribe(
-          (response) => {
-            console.log('Usuario registrado:', response);
-          },
-          (error) => {
-            console.log('Error al registrar usuario:', error);
-          }
-        );
+    const newUser = {
+      "userName": this.nameReg,
+      "email": this.emailReg,
+      "password": this.passwordReg,
+      "ruc": parseInt(this.rucReg),
+      "registrationDate": formattedDate,
+      "userPlan": 0,
+      "userType": parseInt(this.tipoReg)
+    };
 
+    this.http.post('https://api-open-tf-production.up.railway.app/api/v1/user', newUser)
+      .subscribe(
+        (response) => {
+          console.log('Usuario registrado:', response);
+        },
+        (error) => {
+          console.log('Error al registrar usuario:', error);
+        }
+      );
   }
 
   getUsers(): void {
-    this.http
-      .get<User[]>('https://api-open-tf-production.up.railway.app/api/v1/user')
+    this.http.get<User[]>('https://api-open-tf-production.up.railway.app/api/v1/user')
       .subscribe(
         (response) => {
           this.users = response;

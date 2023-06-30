@@ -36,6 +36,10 @@ import { FiltrarProveedoresComponent } from './side-nav/products/filtrar-proveed
 import { AgregarSolicitudModalComponent } from './side-nav/statistics/agregar-solicitud-modal/agregar-solicitud-modal.component';
 import { Body2Component } from './side-nav/body/body2/body2.component'
 
+import { NotificacionesComponentProovedor } from './side-nav/prov-notificaciones/notificacionesprov.component';
+import { SettingsComponentProovedor } from './side-nav/prov-settings/prov-settings.component';
+import { FiltrarVentasComponent } from './side-nav/ventas/filtrar-ventas/filtrar-ventas.component';
+
 import { MatDialogModule } from '@angular/material/dialog';
 import {MatSortModule} from "@angular/material/sort";
 import {MatCheckboxModule} from "@angular/material/checkbox";
@@ -57,7 +61,9 @@ VentasComponent,
     FiltrarProductoModalComponent,
     FiltrarProveedoresComponent,
     AgregarSolicitudModalComponent,
-
+    NotificacionesComponentProovedor,
+    SettingsComponentProovedor,
+    FiltrarVentasComponent
   ],
   imports: [
     BrowserModule,

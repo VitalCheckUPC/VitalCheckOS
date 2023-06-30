@@ -19,9 +19,8 @@
   </ng-container>
   <ng-container matColumnDef="genericName">
     <th mat-header-cell *matHeaderCellDef>Categoría</th>
-    <td mat-cell *matCellDef="let item">{{ item.medicine.genericName }}</td>
+    <td mat-cell *matCellDef="let item">{{ item.medicine.medicineType.typeName }}</td>
   </ng-container>
-
   <ng-container matColumnDef="salePrice">
     <th mat-header-cell *matHeaderCellDef>Precio de Costo</th>
     <td mat-cell *matCellDef="let item">S/ {{ item.salePrice }}</td>

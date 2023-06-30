@@ -1,5 +1,6 @@
 import {RouterModule, Routes} from "@angular/router";
 import {SignInComponent} from "./security/pages/sign-in/sign-in.component";
+import { AuthGuard } from './security/auth.guard';
 
 //sidenav1
 import { VentasComponent } from './side-nav/ventas/ventas.component';
@@ -19,7 +20,7 @@ import { inventarioComponentProovedor } from './side-nav/prov-inventario/inventa
 import { NotificacionesComponentProovedor } from './side-nav/prov-notificaciones/notificacionesprov.component';
 
 import { FarmaciasComponent } from './side-nav/prov-farmacias/farmacias.component';
-import { SettingsComponentProovedor } from './side-nav/prov-settings/settings.component';
+import { SettingsComponentProovedor } from './side-nav/prov-settings/prov-settings.component';
 import { SolicitudesComponent } from './side-nav/prov-solicitudes/solicitudes.component';
 
 
@@ -32,7 +33,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/sign-in', pathMatch: 'full' },
   { path: 'sign-in', component: SignInComponent },
   { path: 'home',
-    component: BodyComponent,
+    component: BodyComponent, canActivate: [AuthGuard],
   children:[
     {path: 'inventario', component: DashboardComponent},
     {path: 'proovedores', component: ProductsComponent},

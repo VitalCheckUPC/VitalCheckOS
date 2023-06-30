@@ -9,14 +9,14 @@ import { MatDialogRef } from '@angular/material/dialog';
 export class FiltrarProductoModalComponent {
 
   quantity: number = 0;
-  genericName: string = '';
+  commercialName: string = '';
 
   constructor(public dialogRef: MatDialogRef<FiltrarProductoModalComponent>) {}
 
   filtrar(): void {
     const filtro = {
       quantity: this.quantity,
-      genericName: this.genericName
+      commercialName: this.commercialName
     };
 
     this.dialogRef.close(filtro);
