@@ -39,6 +39,10 @@ import { Body2Component } from './side-nav/body/body2/body2.component'
 import { NotificacionesComponentProovedor } from './side-nav/prov-notificaciones/notificacionesprov.component';
 import { SettingsComponentProovedor } from './side-nav/prov-settings/prov-settings.component';
 import { FiltrarVentasComponent } from './side-nav/ventas/filtrar-ventas/filtrar-ventas.component';
+import { FiltrarProveedoComponent } from './side-nav/prov-solicitudes/filtrar-proveedores/filtrar-proveedo.component';
+import { inventarioComponentProovedor } from './side-nav/prov-inventario/inventario.component';
+import { SolicitudesComponent } from './side-nav/prov-solicitudes/solicitudes.component';
+import { AgregarIventarioModalComponent } from './side-nav/prov-inventario/agregar-iventario-modal/agregar-iventario-modal.component';
 
 import { MatDialogModule } from '@angular/material/dialog';
 import {MatSortModule} from "@angular/material/sort";
@@ -63,7 +67,11 @@ VentasComponent,
     AgregarSolicitudModalComponent,
     NotificacionesComponentProovedor,
     SettingsComponentProovedor,
-    FiltrarVentasComponent
+    FiltrarVentasComponent,
+    FiltrarProveedoComponent,
+    AgregarIventarioModalComponent,
+    inventarioComponentProovedor,
+    SolicitudesComponent
   ],
   imports: [
     BrowserModule,
