@@ -36,6 +36,9 @@ export class ProductsComponent implements OnInit {
       .subscribe((suppliers: Supplier[]) => {
         const filteredSuppliers = suppliers.filter(supplier => supplier.userType.typeName === 'Proveedor');
         this.dataSource = new MatTableDataSource(filteredSuppliers);
+        this.dataSource.filterPredicate = (data: Supplier, filter: string) => {
+          return this.favoriteMode ? data.favorite : true;
+        };
       });
   }
 
@@ -51,10 +54,20 @@ export class ProductsComponent implements OnInit {
   }
 
   filtrarProveedores(proveedor: string): void {
-    this.dataSource.filter = proveedor.trim().toLowerCase();
+    this.dataSource.filter = proveedor.toLowerCase();
   }
 
   toggleFavoriteMode(): void {
+    this.dataSource.filter = this.favoriteMode ? 'true' : '';
     this.favoriteMode = !this.favoriteMode;
+  }
+  updateFavoriteStatus(supplier: Supplier): void {
+    if (supplier.favorite) {
+      // Aquí puedes realizar la acción correspondiente cuando se marca como favorito
+      console.log('Proveedor marcado como favorito:', supplier);
+    } else {
+      // Aquí puedes realizar la acción correspondiente cuando se desmarca como favorito
+      console.log('Proveedor desmarcado como favorito:', supplier);
+    }
   }
 }

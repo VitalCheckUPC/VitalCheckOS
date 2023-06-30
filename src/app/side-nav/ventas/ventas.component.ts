@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { HttpClient } from '@angular/common/http';
+import {FiltrarVentasComponent} from "./filtrar-ventas/filtrar-ventas.component";
 import { MatDialog } from '@angular/material/dialog';
 interface Supplier {
   saleId: number;
@@ -40,4 +41,20 @@ export class VentasComponent implements OnInit {
         this.dataSource = new MatTableDataSource(suppliers);
       });
   }
+
+  FiltrarVentasComponent(): void {
+    const dialogRef = this.dialog.open(FiltrarVentasComponent, {
+      width: '600px'
+    });
+
+    dialogRef.componentInstance.filtrar.subscribe((filtro: any) => {
+      console.log('Filtro aplicado:', filtro);
+      this.filtrarventas(filtro.proveedor);
+    });
+  }
+
+  filtrarventas(proveedor: string): void {
+    this.dataSource.filter = proveedor.trim().toLowerCase();
+  }
+
 }

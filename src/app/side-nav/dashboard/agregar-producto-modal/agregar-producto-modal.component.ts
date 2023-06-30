@@ -1,16 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { HttpClient } from '@angular/common/http';
-interface Product {
-  quantity: number;
-  salePrice: number;
-  user: {};
-  medicine: {
-    commercialName: string;
-    genericName: string;
-    costPrice: number;
-  }
-}
 @Component({
   selector: 'app-agregar-producto-modal',
   templateUrl: './agregar-producto-modal.component.html',
@@ -19,30 +9,37 @@ interface Product {
 export class AgregarProductoModalComponent {
   quantity: number = 0;
   salePrice: number = 0;
-  commercialName: string = '';
-  genericName: string = '';
-  costPrice: number = 0;
+  user: number = 0;
+  medicine: number= 0;
+
   constructor(
     public dialogRef: MatDialogRef<AgregarProductoModalComponent>,
     private http: HttpClient
   ) {}
-  cancelar(): void {
-    this.dialogRef.close();
-  }
+
   confirmar(): void {
-    const nuevoProducto: Product = {
+    const data = {
       quantity: this.quantity,
       salePrice: this.salePrice,
-      user: {},
-      medicine: {
-        commercialName: this.commercialName,
-        genericName: this.genericName,
-        costPrice: this.costPrice
-      }
+      user: this.user,
+      medicine: this.medicine,
     };
-    this.http.post<Product>('http://localhost:8080/api/v1/inventory', nuevoProducto)
-      .subscribe(response => {
-        this.dialogRef.close(response);
-      });
+
+    // Realizar la solicitud HTTP para guardar los datos
+    this.http.post('https://api-open-tf-production.up.railway.app/api/v1/inventory', data)
+      .subscribe(
+        response => {
+          console.log('Datos guardados exitosamente:', response);
+          // Realizar acciones adicionales si es necesario
+        },
+        error => {
+          console.error('Error al guardar los datos:', error);
+          // Realizar acciones adicionales si es necesario
+        }
+      );
+  }
+
+  cancelar(): void {
+    this.dialogRef.close();
   }
 }

@@ -83,8 +83,8 @@ export class DashboardComponent implements OnInit {
   private filtrarProductos(filtro: any): void {
     this.dataSource.filterPredicate = (data: Product) => {
       const quantityMatch = filtro.quantity === null || filtro.quantity === 0 || data.quantity.toString().includes(filtro.quantity);
-      const genericNameMatch = filtro.genericName === '' || data.medicine.genericName.toLowerCase().includes(filtro.genericName.toLowerCase());
-      return quantityMatch && genericNameMatch;
+      const commercialNameMatch = filtro.commercialName === '' || data.medicine.commercialName.toLowerCase().includes(filtro.commercialName.toLowerCase());
+      return quantityMatch && commercialNameMatch;
     };
 
     this.dataSource.filter = JSON.stringify(filtro);
