@@ -3,8 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatDialog } from '@angular/material/dialog';
-import { AgregarProductoModalComponent } from './agregar-producto-modal/agregar-producto-modal.component';
-import { FiltrarProductoModalComponent } from './filtrar-producto-modal/filtrar-producto-modal.component';
+import { AgregarProductoModalComponent } from './add-product/agregar-producto-modal.component';
+import { FiltrarProductoModalComponent } from './filter-product/filtrar-producto-modal.component';
 
 interface Product {
   inventoryId: string;
@@ -43,7 +43,7 @@ export class DashboardComponent implements OnInit {
 
   fetchData(): void {
     this.http
-      .get<Product[]>('https://api-open-tf-production.up.railway.app/api/v1/inventory')
+      .get<Product[]>('http://localhost:8080/api/v1/inventory')
       .subscribe((data) => {
         this.dataSource.data = data;
         this.dataSource.paginator = this.paginator;

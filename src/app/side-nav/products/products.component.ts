@@ -1,9 +1,8 @@
-import { Component, OnInit, ElementRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { HttpClient } from '@angular/common/http';
-import { FiltrarProveedoresComponent } from './filtrar-proveedores/filtrar-proveedores.component';
 import { MatDialog } from '@angular/material/dialog';
-import { map } from 'rxjs/operators';
+import { FiltrarProveedoresComponent } from './filtrar-proveedores/filtrar-proveedores.component';
 
 interface Supplier {
   userId: number;
@@ -13,7 +12,7 @@ interface Supplier {
     userTypeId: number;
     typeName: string;
   };
-  favorite: boolean; // Nueva propiedad para almacenar el estado de favorito
+  favorite: boolean;
 }
 
 @Component({
@@ -22,30 +21,22 @@ interface Supplier {
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-  displayedColumns: string[] = ['userId', 'typeName', 'userName', 'ruc', 'favorite'];
   dataSource: MatTableDataSource<Supplier> = new MatTableDataSource<Supplier>([]);
+  displayedColumns: string[] = ['userId', 'typeName', 'userName', 'ruc', 'favorite'];
   favoriteMode = true; // Estado del modo de visualización de favoritos
 
-  constructor(private http: HttpClient, private dialog: MatDialog, private elementRef: ElementRef) {}
+  constructor(private http: HttpClient, private dialog: MatDialog) {}
 
   ngOnInit() {
-    this.getSuppliers().subscribe((suppliers: Supplier[]) => {
-      this.dataSource.data = suppliers;
-      // Marcar los proveedores como favoritos
-      this.dataSource.data.forEach(supplier => {
-        supplier.favorite = true;
-      });
-    });
+    this.getSuppliers();
   }
 
   getSuppliers() {
-    return this.http.get<Supplier[]>('http://localhost:8080/api/v1/user').pipe(
-      map((suppliers: Supplier[]) => {
-        return suppliers.filter(supplier => {
-          return supplier.userType.typeName === 'Provider';
-        });
-      })
-    );
+    this.http.get<Supplier[]>('https://api-open-tf-production.up.railway.app/api/v1/user')
+      .subscribe((suppliers: Supplier[]) => {
+        const filteredSuppliers = suppliers.filter(supplier => supplier.userType.typeName === 'Proveedor');
+        this.dataSource = new MatTableDataSource(filteredSuppliers);
+      });
   }
 
   openFiltrarProveedoresModal(): void {

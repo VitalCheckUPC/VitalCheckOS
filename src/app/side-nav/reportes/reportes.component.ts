@@ -2,13 +2,20 @@ import { Component, OnInit, ElementRef } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { HttpClient } from '@angular/common/http';
 import { MatDialog } from '@angular/material/dialog';
+import {forkJoin} from "rxjs";
 
 interface Supplier {
-  codigo: string;
-  proveedor: string;
-  departamento: string;
-  ruc: string;
-  telefono: string;
+  dispatchId: string;
+  medicine: {
+    commercialName: string;
+  };
+  quantity: number;
+  user1:{
+    userName: string;
+  }
+  user2:{
+    userName: string;
+  }
 }
 
 @Component({
@@ -17,21 +24,21 @@ interface Supplier {
   styleUrls: ['./reportes.component.css']
 })
 export class ReportesComponent implements OnInit {
-  displayedColumns: string[] = ['codigo', 'proveedor', 'departamento', 'ruc', 'telefono'];
+  displayedColumns: string[] = ['dispatchId', 'medicine', 'quantity','user1', 'user2'];
   dataSource: MatTableDataSource<Supplier> = new MatTableDataSource<Supplier>([]);
 
   constructor(private http: HttpClient, private dialog: MatDialog, private elementRef: ElementRef) {
   }
 
   ngOnInit() {
-    this.getSuppliers().subscribe((suppliers: Supplier[]) => {
-      this.dataSource.data = suppliers;
-    });
+    this.getSuppliers();
   }
 
   getSuppliers() {
-    // Realiza la solicitud HTTP para obtener los datos de los proveedores desde la API
-    return this.http.get<Supplier[]>('URL_DE_TU_API');
+    this.http.get<Supplier[]>('https://api-open-tf-production.up.railway.app/api/v1/dispatch')
+      .subscribe((suppliers: Supplier[]) => {
+        this.dataSource = new MatTableDataSource(suppliers);
+      });
   }
 
 }

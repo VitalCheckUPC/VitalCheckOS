@@ -30,7 +30,7 @@ export class StatisticsComponent implements OnInit {
   }
 
   fetchData(): void {
-    this.http.get<any[]>('http://localhost:8080/api/v1/dispatch').pipe(
+    this.http.get<any[]>('https://api-open-tf-production.up.railway.app/api/v1/dispatch').pipe(
       map(data => data.map(item => ({
         medicineId: item.medicine.medicineId,
         entryDate: item.entryDate,
@@ -50,7 +50,7 @@ export class StatisticsComponent implements OnInit {
     dialogRef.afterClosed().pipe(
       tap((result) => {
         if (result) {
-          this.http.post('http://localhost:8080/api/v1/dispatch', result).pipe(
+          this.http.post('https://api-open-tf-production.up.railway.app/api/v1/dispatch', result).pipe(
             tap((response) => {
               console.log('Solicitud agregada:', response);
               this.fetchData(); // Actualizar la tabla con los nuevos datos

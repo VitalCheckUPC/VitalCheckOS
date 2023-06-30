@@ -37,11 +37,6 @@
   color: #ef8d8d;
 }
 
-.table {
-  margin: 0 auto;
-  border-collapse: collapse;
-  border: 2px solid #ee8585;
-}
 
 .table th,
 .table td {
@@ -50,9 +45,6 @@
   white-space: nowrap;
 }
 
-.table th {
-  background-color: lightgray;
-}
 
 .table tr {
   display: flex;
