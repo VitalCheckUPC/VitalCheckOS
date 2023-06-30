@@ -47,10 +47,7 @@
   background-color: #e78787 !important;
   color: white !important;
 }
-.table td, .table th {
-  border-left: 2px solid #ea7070;
-  border-right: 2px solid #ef7575;
-}
+
 
 .button{
   color: #e17676;

@@ -34,8 +34,8 @@
         <label class="error-message" *ngIf="emptyFields && tipoReg === ''">Por favor Seleccione su tipo de cuenta <br></label>
         <label for="cuenta" class="input-text">Seleccione el tipo de cuenta:</label>
         <select [(ngModel)]="tipoReg" name="cuenta" id="cuenta" class="input-control">
-          <option value="farmacia">Farmacia</option>
-          <option value="proovedor">Proovedor</option>
+          <option value="2">Farmacia</option>
+          <option value="1">Proovedor</option>
         </select>
         <br>
         <button type="submit" class="button-68" (click)="doRegister()">Registrar</button>

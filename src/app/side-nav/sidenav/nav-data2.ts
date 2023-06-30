@@ -1,36 +1,26 @@
-export const navbarData = [
+export const navbarData2 = [
     {
-        routeLink: '/home/inventario',
+        routeLink: '/home/inventario-prov',
         icon: 'https://cdn.discordapp.com/attachments/1087924334779191359/1114244616456245368/Vector.png',
         label: 'Inventario'
     },
     {
-        routeLink: '/home/proovedores',
+        routeLink: '/home/farmacias-prov',
         icon: 'https://cdn.discordapp.com/attachments/1087924334779191359/1114244615105687623/Supplier.png',
-        label: 'Proveedores'
+        label: 'Farmacias'
     },
     {
-        routeLink: '/home/abastecimiento',
+        routeLink: '/home/solicitudes-prov',
         icon: 'https://cdn.discordapp.com/attachments/1087924334779191359/1114244615399276574/Vector_1.png',
-        label: 'Abastecimiento'
+        label: 'Solicitudes'
     },
     {
-        routeLink: '/home/reportes',
-        icon: 'https://cdn.discordapp.com/attachments/1087924334779191359/1114244614833049680/Statistic_Document.png',
-        label: 'Reportes'
-    },
-    {
-        routeLink: '/home/ventas',
-        icon: 'https://cdn.discordapp.com/attachments/1087924334779191359/1114244615697076234/Vector_2.png',
-        label: 'Ventas'
-    },
-    {
-        routeLink: '/home/notificaciones',
+        routeLink: '/home/notificaciones-prov',
         icon: 'https://cdn.discordapp.com/attachments/1087924334779191359/1114244615944548475/Vector_3.png',
         label: 'Notificaciones'
     },
     {
-        routeLink: '/home/settings',
+        routeLink: '/home/settings-prov',
         icon: 'https://cdn.discordapp.com/attachments/1087924334779191359/1114244616179417238/Vector_4.png',
         label: 'Configuraciones'
     },

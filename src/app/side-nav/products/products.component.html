@@ -14,13 +14,13 @@
     <!-- Tipo de Usuario -->
     <ng-container matColumnDef="typeName">
       <th mat-header-cell *matHeaderCellDef>Proveedores</th>
-      <td mat-cell *matCellDef="let supplier">{{ supplier.userType.typeName }}</td>
+      <td mat-cell *matCellDef="let supplier">{{ supplier.userName }}</td>
     </ng-container>
 
     <!-- Nombre de Usuario -->
     <ng-container matColumnDef="userName">
-      <th mat-header-cell *matHeaderCellDef>Nombre Negocio</th>
-      <td mat-cell *matCellDef="let supplier">{{ supplier.userName }}</td>
+      <th mat-header-cell *matHeaderCellDef>Email</th>
+      <td mat-cell *matCellDef="let supplier">{{ supplier.email }}</td>
     </ng-container>
 
     <!-- RUC -->
