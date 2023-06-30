@@ -44,8 +44,19 @@ export class SidenavComponent implements OnInit {
   @Output() onToggleSideNav: EventEmitter<SideNavToggle> = new EventEmitter();
   collapsed = false;
   screenWidth = 0;
-  navData = navbarData;
+  navData: any;
+  navData1 = navbarData;
   navData2 = navbarData2;
+
+  obtener_localstorage(){
+  let tipo = localStorage.getItem("tipo");
+  if(tipo === "Botica"){
+    this.navData = this.navData1;
+  }
+  else{
+    this.navData = this.navData2;
+  }
+ }
 
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
@@ -58,6 +69,7 @@ export class SidenavComponent implements OnInit {
 
   ngOnInit(): void {
     this.screenWidth = window.innerWidth;
+    this.obtener_localstorage();
   }
 
   toggleCollapse(): void {
